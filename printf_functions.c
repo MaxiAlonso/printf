@@ -3,11 +3,12 @@
 /**
  * print_number - Print a integer.
  * @args: Arguments that passed.
- * Return: Return 0.
+ * Return: Return lenght of number.
  */
 int print_number(va_list args)
 {
 	int n;
+	int rcount = 0;
 	unsigned int num;
 	unsigned int positive;
 	unsigned int count;
@@ -34,6 +35,52 @@ int print_number(va_list args)
 	for ( ; count >= 1; count /= 10)
 	{
 		_putchar(((num / count) % 10) + '0');
+		rcount++;
 	}
-	return (0);
+	return (rcount);
+}
+
+/**
+ * print_char - Print a character.
+ * @args: Arguments passed.
+ * Return: Return lenght of char
+ */
+int print_char(va_list args)
+{
+	char c;
+
+	c = va_arg(args, int);
+	_putchar(c);
+	return (1);
+}
+
+/**
+ * print_string - Print strings.
+ * @args: Argument passed.
+ * Return: Return lenght of string
+ */
+int print_string(va_list args)
+{
+	char *str;
+	int i = 0;
+	
+	str = va_arg(args, char *);
+
+	while (str[i] != '\0')
+	{
+		_putchar(str[i]);
+		i++;
+	}
+	return (i);
+}
+
+/**
+ * print_percentage - Print percentage.
+ * @args: Argument passed.
+ * Return: Return lenght of char.
+ */
+int print_percentage()
+{
+	_putchar('%');
+	return (1);
 }
