@@ -12,7 +12,7 @@ int print_number(va_list args)
 	unsigned int positive;
 	unsigned int count;
 
-	va_arg(args, int) = n;
+	n = va_arg(args, int);
 
 	if (n < 0)
 	{
