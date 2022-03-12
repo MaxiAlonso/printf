@@ -1,4 +1,5 @@
 #include "printf.h"
+#include <stdarg.h>
 /**
  * print_number - Print a integer.
  * @args: Arguments that passed.
