@@ -8,29 +8,32 @@
 
 int _printf(const char *format, ...)
 {
-	print my_print{
-		{"d", print_number}
-		{"i", print_number}
-		{NULL, NULL}
+	print myprint[] = {
+		{"d", print_number},
+		{"i", print_number},
+		{NULL, NULL},
 	};
 
-	va_list args,
-	va_start(args, format);
-	unsigned int i = 0;
+	int count, i;
+	va_list args;
 
-	while (format[i] != NULL && fomart[i])
+	va_start(args, format);
+	i = 0;
+
+	while (format != NULL && format[i] != '\0')
 	{
 		count = 0;
-		if (format[i] == %)
+		if (format[i] == '%')
 		{
 			while (count < 2)
 			{
-				if (format[i + 1] == my_print[count].pr[0])
+				if (format[i + 1] == myprint[count].pr[0])
 				{
 					myprint[count].f(args);
 				}
 				count++;
 			}
+			i++;
 		}
 		else
 		{
@@ -39,5 +42,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-	return (0);
+	return (i);
 }
