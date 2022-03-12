@@ -14,6 +14,8 @@ int _printf(const char *format, ...)
 		{"s", print_string},
 		{"%", print_percentage},
 		{"b", print_binary},
+		{"u", print_unsigned},
+		{"o", print_octal},
 		{NULL, NULL},
 	};
 
@@ -30,7 +32,7 @@ int _printf(const char *format, ...)
 		count = 0;
 		if (format[i] == '%')
 		{
-			while (count < 6)
+			while (count < 8)
 			{
 				if (format[i + 1] == myprint[count].pr[0])
 				{
