@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "main.h"
 /**
  * _printf - produce output according to a format.
  * @format: - define the format to print.
@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percentage},
+		{"b", print_binary},
 		{NULL, NULL},
 	};
 
@@ -29,7 +30,7 @@ int _printf(const char *format, ...)
 		count = 0;
 		if (format[i] == '%')
 		{
-			while (count < 5)
+			while (count < 6)
 			{
 				if (format[i + 1] == myprint[count].pr[0])
 				{
