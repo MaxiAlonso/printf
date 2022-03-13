@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdarg.h>
+
 /**
  * print_number - Print a integer.
  * @args: Arguments that passed.
@@ -63,7 +63,7 @@ int print_string(va_list args)
 {
 	char *str;
 	int i = 0;
-	
+
 	str = va_arg(args, char *);
 
 	while (str[i] != '\0')
@@ -76,10 +76,9 @@ int print_string(va_list args)
 
 /**
  * print_percentage - Print percentage.
- * @args: Argument passed.
  * Return: Return lenght of char.
  */
-int print_percentage()
+int print_percentage(void)
 {
 	_putchar('%');
 	return (1);
