@@ -27,5 +27,6 @@ int print_unsigned(va_list args);
 int print_octal(va_list args);
 int print_hexalow(va_list args);
 int print_hexaupp(va_list args);
+int print_rev(va_list args);
 
 #endif
