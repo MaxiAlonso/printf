@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * print_binary - convert a number into binary and print it
@@ -22,7 +21,8 @@ int print_binary(va_list args)
 	}
 	rcount = i;
 	str = malloc((sizeof(char) * i) + 1);
-
+	if (str == NULL)
+		return (-1);
 	i = 0;
 	while (num > 0)
 	{
@@ -30,6 +30,7 @@ int print_binary(va_list args)
 		num /= 2;
 		i++;
 	}
+	str[i] = '\0';
 	while (i != 0)
 	{
 		_putchar(str[i]);
@@ -92,7 +93,8 @@ int print_octal(va_list args)
 	}
 	rcount = i;
 	str = malloc((sizeof(char) * i) + 1);
-
+	if (str == NULL)
+		return (-1);
 	i = 0;
 	while (num > 0)
 	{
@@ -100,6 +102,7 @@ int print_octal(va_list args)
 		num /= 8;
 		i++;
 	}
+	str[i] = '\0';
 	while (i != 0)
 	{
 		_putchar(str[i]);
@@ -120,40 +123,39 @@ int print_hexalow(va_list args)
 	unsigned int num, a, rcount, i;
 	char *str;
 
-	num = va_arg(args, int), a = num;
+	num = va_arg(args, int);
+	a = num;
 	while (a > 0)
-		a /= 16, i++;
-	rcount = i, str = malloc((sizeof(char) * i) + 1), i = 0;
+	{
+		a /= 16;
+		i++;
+	}
+
+	rcount = i;
+	str = malloc((sizeof(char) * i) + 1);
+	if (str == NULL)
+	{
+		return (-1);
+	}
+	i = 0;
 	while (num > 0)
 	{
 		if ((num % 16) <= 9)
+		{
 			str[i] = (num % 16) + '0';
+		}
 		else
-			switch (num % 16)
-			{
-				case 10:
-					str[i] = 'a';
-					break;
-				case 11:
-					str[i] = 'b';
-					break;
-				case 12:
-					str[i] = 'c';
-					break;
-				case 13:
-					str[i] = 'd';
-					break;
-				case 14:
-					str[i] = 'e';
-					break;
-				case 15:
-					str[i] = 'f';
-					break;
-			}
+		{
+			str[i] = (num % 16) - 10 + 'a';
+		}
 		num /= 16, i++;
 	}
+	str[i] = '\0';
 	while (i != 0)
-		_putchar(str[i]), i--;
+	{
+		_putchar(str[i]);
+		i--;
+	}
 	_putchar(str[i]);
 	free(str);
 	return (rcount);
@@ -169,42 +171,41 @@ int print_hexaupp(va_list args)
 	unsigned int num, a, rcount, i;
 	char *str;
 
-	num = va_arg(args, int), a = num;
+	num = va_arg(args, int);
+	a = num;
 	while (a > 0)
-		a /= 16, i++;
-	rcount = i, str = malloc((sizeof(char) * i) + 1), i = 0;
+	{
+		a /= 16;
+		i++;
+	}
+
+	rcount = i;
+	str = malloc((sizeof(char) * i) + 1);
+
+	if (str == NULL)
+	{
+		return (-1);
+	}
+	i = 0;
 	while (num > 0)
 	{
 		if ((num % 16) <= 9)
+		{
 			str[i] = (num % 16) + '0';
+		}
 		else
-			switch (num % 16)
-			{
-				case 10:
-					str[i] = 'A';
-					break;
-				case 11:
-					str[i] = 'B';
-					break;
-				case 12:
-					str[i] = 'C';
-					break;
-				case 13:
-					str[i] = 'D';
-					break;
-				case 14:
-					str[i] = 'E';
-					break;
-				case 15:
-					str[i] = 'F';
-					break;
-			}
+		{
+			str[i] = (num % 16) - 10 + 'A';
+		}
 		num /= 16, i++;
 	}
+	str[i] = '\0';
 	while (i != 0)
-		_putchar(str[i]), i--;
+	{
+		_putchar(str[i]);
+		i--;
+	}
 	_putchar(str[i]);
 	free(str);
 	return (rcount);
 }
-
