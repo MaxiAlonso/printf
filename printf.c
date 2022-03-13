@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 		{"x", print_hexalow},
 		{"X", print_hexaupp},
 		{"r", print_rev},
+		{"R", print_rot13},
 		{NULL, NULL},
 	};
 
@@ -35,7 +36,7 @@ int _printf(const char *format, ...)
 		count = 0;
 		if (format[i] == '%')
 		{
-			while (count < 12)
+			while (myprint[count].pr[0])
 			{
 				if (format[i + 1] == myprint[count].pr[0])
 				{
