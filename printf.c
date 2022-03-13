@@ -16,6 +16,8 @@ int _printf(const char *format, ...)
 		{"b", print_binary},
 		{"u", print_unsigned},
 		{"o", print_octal},
+		{"x", print_hexalow},
+		{"X", print_hexaupp},
 		{NULL, NULL},
 	};
 
@@ -32,7 +34,7 @@ int _printf(const char *format, ...)
 		count = 0;
 		if (format[i] == '%')
 		{
-			while (count < 8)
+			while (count < 11)
 			{
 				if (format[i + 1] == myprint[count].pr[0])
 				{
