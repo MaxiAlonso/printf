@@ -8,29 +8,19 @@
 int _printf(const char *format, ...)
 {
 	print myprint[] = {
-		{"d", print_number},
-		{"i", print_number},
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percentage},
-		{"b", print_binary},
-		{"u", print_unsigned},
-		{"o", print_octal},
-		{"x", print_hexalow},
-		{"X", print_hexaupp},
-		{"r", print_rev},
-		{"R", print_rot13},
+		{"d", print_number}, {"i", print_number},
+		{"c", print_char}, {"s", print_string},
+		{"%", print_percentage}, {"b", print_binary},
+		{"u", print_unsigned}, {"o", print_octal},
+		{"x", print_hexalow}, {"X", print_hexaupp},
+		{"r", print_rev}, {"R", print_rot13},
 		{NULL, NULL},
 	};
 
-	int count, i;
+	int count = 0, rcount = 0, i = 0;
 	va_list args;
-	int rcount;
 
 	va_start(args, format);
-	i = 0;
-	rcount = 0;
-
 	while (format != NULL && format[i] != '\0')
 	{
 		count = 0;
