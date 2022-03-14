@@ -131,7 +131,7 @@ int print_octal(va_list args)
  */
 int print_hexalow(va_list args)
 {
-	unsigned int num, a, rcount = 0, i;
+	unsigned int num, a, x, rcount = 0, i;
 	char *str;
 
 	num = va_arg(args, int);
@@ -154,14 +154,15 @@ int print_hexalow(va_list args)
 	i = 0;
 	while (num > 0)
 	{
-		if ((num % 16) <= 9)
+		x = num % 16;
+		if (x <= 9)
 		{
-			str[i] = (num % 16) + '0';
+			str[i] = x + '0';
 			i++;
 		}
 		else
 		{
-			str[i] = (num % 16) - 10 + 'a';
+			str[i] = x - 10 + 'a';
 			i++;
 		}
 		num /= 16, i++;
@@ -183,7 +184,7 @@ int print_hexalow(va_list args)
  */
 int print_hexaupp(va_list args)
 {
-	unsigned int num, a, rcount = 0, i;
+	unsigned int num, a, x, rcount = 0, i;
 	char *str;
 
 	num = va_arg(args, int);
@@ -206,14 +207,15 @@ int print_hexaupp(va_list args)
 	i = 0;
 	while (num > 0)
 	{
-		if ((num % 16) <= 9)
+		x = num % 16;
+		if (x <= 9)
 		{
-			str[i] = (num % 16) + '0';
+			str[i] = x + '0';
 			i++;
 		}
 		else
 		{
-			str[i] = (num % 16) - 10 + 'A';
+			str[i] = x - 10 + 'A';
 			i++;
 		}
 		num /= 16, i++;
