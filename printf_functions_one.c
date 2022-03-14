@@ -72,7 +72,7 @@ int print_unsigned(va_list args)
 		_putchar(((num / count) % 10) + '0');
 		rcount++;
 	}
-	return (rcount + n);
+	return (rcount);
 }
 
 /**
