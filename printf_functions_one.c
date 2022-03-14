@@ -53,13 +53,13 @@ int print_unsigned(va_list args)
 {
 	unsigned int n;
 	int rcount = 0;
-	/*unsigned int num;
+	unsigned int num;
 	unsigned int positive;
-	unsigned int count;*/
+	unsigned int count;
 
 	n = va_arg(args, unsigned int);
 
-	/*num = n;
+	num = n;
 	positive = num;
 	count = 1;
 
@@ -72,7 +72,7 @@ int print_unsigned(va_list args)
 	{
 		_putchar(((num / count) % 10) + '0');
 		rcount++;
-	}**/
+	}
 	return (rcount + n);
 }
 
@@ -132,10 +132,6 @@ int print_hexalow(va_list args)
 
 	num = va_arg(args, int);
 	a = num;
-<<<<<<< HEAD
-=======
-
->>>>>>> cf5b850b6090df1a778606db31a1e6753e21f7b3
 	if (num == 0)
 	{
 		_putchar('0');
@@ -156,19 +152,15 @@ int print_hexalow(va_list args)
 	while (num > 0)
 	{
 		if ((num % 16) <= 9)
+		{
 			str[i] = (num % 16) + '0';
-<<<<<<< HEAD
 			i++;
 		}
-=======
->>>>>>> cf5b850b6090df1a778606db31a1e6753e21f7b3
 		else
+		{
 			str[i] = (num % 16) - 10 + 'a';
-<<<<<<< HEAD
 			i++;
 		}
-=======
->>>>>>> cf5b850b6090df1a778606db31a1e6753e21f7b3
 		num /= 16, i++;
 	}
 	str[i] = '\0';
@@ -193,10 +185,6 @@ int print_hexaupp(va_list args)
 
 	num = va_arg(args, int);
 	a = num;
-<<<<<<< HEAD
-=======
-
->>>>>>> cf5b850b6090df1a778606db31a1e6753e21f7b3
 	if (num == 0)
 	{
 		_putchar('0');
@@ -217,29 +205,22 @@ int print_hexaupp(va_list args)
 	while (num > 0)
 	{
 		if ((num % 16) <= 9)
+		{
 			str[i] = (num % 16) + '0';
-<<<<<<< HEAD
 			i++;
 		}
-=======
->>>>>>> cf5b850b6090df1a778606db31a1e6753e21f7b3
 		else
+		{
 			str[i] = (num % 16) - 10 + 'A';
-<<<<<<< HEAD
 			i++;
 		}
-=======
->>>>>>> cf5b850b6090df1a778606db31a1e6753e21f7b3
 		num /= 16, i++;
 	}
 	str[i] = '\0';
 	while (i != 0)
 	{
-<<<<<<< HEAD
 		i++;
-=======
 		i--;
->>>>>>> cf5b850b6090df1a778606db31a1e6753e21f7b3
 		_putchar(str[i]);
 	}
 	free(str);
