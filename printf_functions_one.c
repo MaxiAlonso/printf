@@ -89,10 +89,15 @@ int print_octal(va_list args)
 	num = va_arg(args, int);
 	a = num;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (a > 0)
 	{
-		a /= 8;
 		i++;
+		a /= 8;
 	}
 	rcount = i;
 	str = malloc((sizeof(char) * i) + 1);
@@ -108,10 +113,9 @@ int print_octal(va_list args)
 	str[i] = '\0';
 	while (i != 0)
 	{
-		_putchar(str[i]);
 		i--;
+		_putchar(str[i]);
 	}
-	_putchar(str[i]);
 	free(str);
 	return (rcount);
 }
@@ -128,10 +132,15 @@ int print_hexalow(va_list args)
 
 	num = va_arg(args, int);
 	a = num;
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (a > 0)
 	{
-		a /= 16;
 		i++;
+		a /= 16;
 	}
 
 	rcount = i;
@@ -146,20 +155,21 @@ int print_hexalow(va_list args)
 		if ((num % 16) <= 9)
 		{
 			str[i] = (num % 16) + '0';
+			i++;
 		}
 		else
 		{
 			str[i] = (num % 16) - 10 + 'a';
+			i++;
 		}
 		num /= 16, i++;
 	}
 	str[i] = '\0';
 	while (i != 0)
 	{
-		_putchar(str[i]);
 		i--;
+		_putchar(str[i]);
 	}
-	_putchar(str[i]);
 	free(str);
 	return (rcount);
 }
@@ -176,15 +186,19 @@ int print_hexaupp(va_list args)
 
 	num = va_arg(args, int);
 	a = num;
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (a > 0)
 	{
-		a /= 16;
 		i++;
+		a /= 16;
 	}
 
 	rcount = i;
 	str = malloc((sizeof(char) * i) + 1);
-
 	if (str == NULL)
 	{
 		return (-1);
@@ -195,20 +209,21 @@ int print_hexaupp(va_list args)
 		if ((num % 16) <= 9)
 		{
 			str[i] = (num % 16) + '0';
+			i++;
 		}
 		else
 		{
 			str[i] = (num % 16) - 10 + 'A';
+			i++;
 		}
 		num /= 16, i++;
 	}
 	str[i] = '\0';
 	while (i != 0)
 	{
+		i++;
 		_putchar(str[i]);
-		i--;
 	}
-	_putchar(str[i]);
 	free(str);
 	return (rcount);
 }
