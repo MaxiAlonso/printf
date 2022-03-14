@@ -57,6 +57,11 @@ int print_unsigned(va_list args)
 	num = n;
 	positive = num;
 	count = 1;
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (positive > 9)
 	{
 		positive /= 10;
