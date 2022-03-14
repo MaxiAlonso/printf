@@ -14,7 +14,6 @@ int _printf(const char *format, ...)
 		{"X", print_hexaupp}, {"r", print_rev}, {"R", print_rot13},
 		{NULL, NULL},
 	};
-
 	int count = 0, rcount = 0, i = 0, s = 0;
 	va_list args;
 
@@ -25,6 +24,7 @@ int _printf(const char *format, ...)
 	{
 		count = 0;
 		if (format[i] == '%')
+		{
 			s = 0;
 			if (format[i + 1] == '\0')
 				return (-1);
@@ -33,14 +33,14 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == myprint[count].pr[0])
 				{
 					rcount	+= (myprint[count].f(args)) - 2;
-					i++;
-					s = 1;
+					i++, s = 1;
 					break;
 				}
 				count++;
 			}
 			if (s == 0)
 				_putchar(format[i]);
+		}
 		else
 			_putchar(format[i]);
 	i++;
