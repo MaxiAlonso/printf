@@ -53,13 +53,13 @@ int print_unsigned(va_list args)
 {
 	unsigned int n;
 	int rcount = 0;
-	unsigned int num;
+	/*unsigned int num;
 	unsigned int positive;
-	unsigned int count;
+	unsigned int count;*/
 
 	n = va_arg(args, unsigned int);
 
-	num = n;
+	/*num = n;
 	positive = num;
 	count = 1;
 
@@ -72,8 +72,8 @@ int print_unsigned(va_list args)
 	{
 		_putchar(((num / count) % 10) + '0');
 		rcount++;
-	}
-	return (rcount);
+	}**/
+	return (rcount + n);
 }
 
 /**
