@@ -11,8 +11,13 @@ int print_binary(va_list args)
 	unsigned int num, a, rcount = 0, i = 0;
 	char *str;
 
-	num = va_arg(args, unsigned int);
+	num = va_arg(args, int);
 	a = num;
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (a > 0)
 	{
 		a /= 2;
