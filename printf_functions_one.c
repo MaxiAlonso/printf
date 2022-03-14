@@ -46,15 +46,12 @@ int print_binary(va_list args)
 
 int print_unsigned(va_list args)
 {
-	unsigned int n;
 	int rcount = 0;
 	unsigned int num;
 	unsigned int positive;
 	unsigned int count;
 
-	n = va_arg(args, unsigned int);
-
-	num = n;
+	num = va_arg(args, int);
 	positive = num;
 	count = 1;
 	if (num == 0)
