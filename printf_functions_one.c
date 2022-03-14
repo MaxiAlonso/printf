@@ -115,7 +115,6 @@ int print_octal(va_list args)
 		num /= 8;
 		i++;
 	}
-	str[i] = '\0';
 	while (i != 0)
 	{
 		i--;
@@ -168,7 +167,6 @@ int print_hexalow(va_list args)
 		}
 		num /= 16, i++;
 	}
-	str[i] = '\0';
 	while (i != 0)
 	{
 		i--;
@@ -221,10 +219,8 @@ int print_hexaupp(va_list args)
 		}
 		num /= 16, i++;
 	}
-	str[i] = '\0';
 	while (i != 0)
 	{
-		i++;
 		i--;
 		_putchar(str[i]);
 	}
