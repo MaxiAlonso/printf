@@ -1,0 +1,22 @@
+0x11 - printf
+
+Name: _printf
+
+Library: #include "main.h"
+Syntax - int _printf(const char *format, ...);
+
+
+
+
+List of arguments:
+	- "%d": Print a decimal number.
+	- "%i": Print a integer in base 10.
+	- "%c": Print a character.
+	- "%s": Print a string.
+	- "%b": Print a number in binary.
+	- "%u": Print a unsigned integer.
+	- "%o": Print a number in octal. 
+	- "%x": Print a number in hexadecimal (lowercase).
+	- "%X": Print a number in hexadecimal (uppercase).
+	- "%r": Print a string in reverse.
+	- "%R": Print a rot13 string.
