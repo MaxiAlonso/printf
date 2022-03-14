@@ -35,10 +35,9 @@ int print_binary(va_list args)
 	}
 	while (i != 0)
 	{
-		_putchar(str[i]);
 		i--;
+		_putchar(str[i]);
 	}
-	_putchar(str[i]);
 	free(str);
 	return (rcount);
 }
