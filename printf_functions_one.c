@@ -88,7 +88,7 @@ int print_unsigned(va_list args)
  */
 int print_octal(va_list args)
 {
-	unsigned int num, a, i, rcount;
+	unsigned int num, a, i, rcount = 0;
 	char *str;
 
 	num = va_arg(args, int);
@@ -104,7 +104,6 @@ int print_octal(va_list args)
 		i++;
 		a /= 8;
 	}
-	rcount = i;
 	str = malloc((sizeof(char) * i) + 1);
 	if (str == NULL)
 		return (-1);
@@ -119,6 +118,7 @@ int print_octal(va_list args)
 	{
 		i--;
 		_putchar(str[i]);
+		rcount++;
 	}
 	free(str);
 	return (rcount);
@@ -131,7 +131,7 @@ int print_octal(va_list args)
  */
 int print_hexalow(va_list args)
 {
-	unsigned int num, a, rcount, i;
+	unsigned int num, a, rcount = 0, i;
 	char *str;
 
 	num = va_arg(args, int);
@@ -143,10 +143,9 @@ int print_hexalow(va_list args)
 	}
 	while (a > 0)
 	{
-		i++;
 		a /= 16;
+		i++;
 	}
-	rcount = i;
 	str = malloc((sizeof(char) * i) + 1);
 	if (str == NULL)
 	{
@@ -171,6 +170,7 @@ int print_hexalow(va_list args)
 	{
 		i--;
 		_putchar(str[i]);
+		rcount++;
 	}
 	free(str);
 	return (rcount);
@@ -183,7 +183,7 @@ int print_hexalow(va_list args)
  */
 int print_hexaupp(va_list args)
 {
-	unsigned int num, a, rcount, i;
+	unsigned int num, a, rcount = 0, i;
 	char *str;
 
 	num = va_arg(args, int);
@@ -198,7 +198,6 @@ int print_hexaupp(va_list args)
 		i++;
 		a /= 16;
 	}
-	rcount = i;
 	str = malloc((sizeof(char) * i) + 1);
 	if (str == NULL)
 	{
@@ -223,6 +222,7 @@ int print_hexaupp(va_list args)
 	{
 		i--;
 		_putchar(str[i]);
+		rcount++;
 	}
 	free(str);
 	return (rcount);
