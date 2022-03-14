@@ -8,18 +8,10 @@
 int _printf(const char *format, ...)
 {
 	print myprint[] = {
-		{"d", print_number},
-		{"i", print_number},
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percentage},
-		{"b", print_binary},
-		{"u", print_unsigned},
-		{"o", print_octal},
-		{"x", print_hexalow},
-		{"X", print_hexaupp},
-		{"r", print_rev},
-		{"R", print_rot13},
+		{"d", print_number}, {"i", print_number}, {"c", print_char},
+		{"s", print_string}, {"%", print_percentage}, {"b", print_binary},
+		{"u", print_unsigned}, {"o", print_octal}, {"x", print_hexalow},
+		{"X", print_hexaupp}, {"r", print_rev}, {"R", print_rot13},
 		{NULL, NULL},
 	};
 
@@ -28,19 +20,14 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 	if (format == NULL)
-	{
 		return (-1);
-	}
 	while (format != NULL && format[i] != '\0')
 	{
 		count = 0;
 		if (format[i] == '%')
-		{
 			s = 0;
 			if (format[i + 1] == '\0')
-			{
 				return (-1);
-			}
 			while (myprint[count].pr)
 			{
 				if (format[i + 1] == myprint[count].pr[0])
@@ -53,14 +40,9 @@ int _printf(const char *format, ...)
 				count++;
 			}
 			if (s == 0)
-			{
 				_putchar(format[i]);
-			}
-		}
 		else
-		{
 			_putchar(format[i]);
-		}
 	i++;
 	}
 	va_end(args);
