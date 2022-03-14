@@ -13,7 +13,10 @@ int print_binary(va_list args)
 
 	num = va_arg(args, int);
 	a = num;
-
+	if (!num)
+	{
+		_printf("(null)");
+	}
 	while (a > 0)
 	{
 		a /= 2;
