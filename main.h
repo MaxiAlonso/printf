@@ -21,7 +21,7 @@ int print_number(va_list args);
 int _putchar(char c);
 int print_char(va_list args);
 int print_string(va_list args);
-int print_percentage();
+int print_percentage(va_list args);
 int print_binary(va_list args);
 int print_unsigned(va_list args);
 int print_octal(va_list args);
