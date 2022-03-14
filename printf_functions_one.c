@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * print_binary - convert a number into binary and print it
  * @args: argument passed.
@@ -8,7 +8,7 @@
 
 int print_binary(va_list args)
 {
-	unsigned int num, a, rcount, i = 0;
+	unsigned int num, a, rcount = 0, i = 0;
 	char *str;
 
 	num = va_arg(args, int);
