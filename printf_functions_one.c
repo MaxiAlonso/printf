@@ -44,6 +44,12 @@ int print_binary(va_list args)
 	return (rcount);
 }
 
+/**
+* print_unsigned - print an unsigned number.
+* @args: argument passed.
+* Return: lenght of the unisgned number
+**/
+
 int print_unsigned(va_list args)
 {
 	int rcount = 0;
