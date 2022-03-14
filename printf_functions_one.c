@@ -63,6 +63,11 @@ int print_unsigned(va_list args)
 	positive = num;
 	count = 1;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (positive > 9)
 	{
 		positive /= 10;
@@ -73,7 +78,7 @@ int print_unsigned(va_list args)
 		_putchar(((num / count) % 10) + '0');
 		rcount++;
 	}
-	return (rcount + n);
+	return (rcount);
 }
 
 /**
