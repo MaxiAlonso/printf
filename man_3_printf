@@ -1,14 +1,43 @@
-0x11 - printf
+NAME
+		_printf
 
-Name: _printf
+SYNOPSIS		
 
-Library: #include "main.h"
-Syntax - int _printf(const char *format, ...);
+		#include "main.h"
+		
+		int _printf(const char *format, ...);
 
+DESCRIPTION
+		The _printf function write output to standar output.
 
+		This function write the output under the control of a
+		format string that specifies how subsequent arguments (or
+		arguments accessed via the variable-length argument facilities of
+		stdarg(3)) are converted for output.
+	
+	Format of the string
 
+		The format string is a character string, beginning and ending in
+		its initial shift state, if any.  The format string is composed
+		of zero or more directives: ordinary characters (not %), which
+		are copied unchanged to the output stream; and conversion
+		specifications, each of which results in fetching zero or more
+		subsequent arguments.  Each conversion specification is
+		introduced by the character %, and ends with a conversion
+		specifier.
 
-List of arguments:
+		The overall syntax of a conversion specification is:
+			%[$][flags]conversion
+
+		The arguments must correspond properly (after type promotion)
+		with the conversion specifier.  By default, the arguments are
+		used in the order given, where each '*' (see Field width and
+		Precision below) and each conversion specifier asks for the next
+		argument (and it is an error if insufficiently many arguments are
+		given).
+
+		
+	List of arguments:
 	- "%d": Print a decimal number.
 	- "%i": Print a integer in base 10.
 	- "%c": Print a character.
