@@ -33,7 +33,6 @@ int print_binary(va_list args)
 		num /= 2;
 		i++;
 	}
-	str[i] = '\0';
 	while (i != 0)
 	{
 		_putchar(str[i]);
