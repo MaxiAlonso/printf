@@ -44,11 +44,6 @@ int print_binary(va_list args)
 	return (rcount);
 }
 
-/**
- * print_unsigned - Print positive number.
- * @args: Argument passed.
- * Return: Return lenght of numbers.
- */
 int print_unsigned(va_list args)
 {
 	unsigned int n;
@@ -62,12 +57,6 @@ int print_unsigned(va_list args)
 	num = n;
 	positive = num;
 	count = 1;
-
-	if (num == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
 	while (positive > 9)
 	{
 		positive /= 10;
@@ -78,7 +67,7 @@ int print_unsigned(va_list args)
 		_putchar(((num / count) % 10) + '0');
 		rcount++;
 	}
-	return (rcount);
+	return (rcount + n);
 }
 
 /**
@@ -88,7 +77,7 @@ int print_unsigned(va_list args)
  */
 int print_octal(va_list args)
 {
-	unsigned int num, a, i, rcount = 0;
+	unsigned int num, a, i = 0, rcount;
 	char *str;
 
 	num = va_arg(args, int);
@@ -101,9 +90,10 @@ int print_octal(va_list args)
 	}
 	while (a > 0)
 	{
-		i++;
 		a /= 8;
+		i++;
 	}
+	rcount = i;
 	str = malloc((sizeof(char) * i) + 1);
 	if (str == NULL)
 		return (-1);
@@ -114,11 +104,11 @@ int print_octal(va_list args)
 		num /= 8;
 		i++;
 	}
+	str[i] = '\0';
 	while (i != 0)
 	{
 		i--;
 		_putchar(str[i]);
-		rcount++;
 	}
 	free(str);
 	return (rcount);
@@ -131,11 +121,12 @@ int print_octal(va_list args)
  */
 int print_hexalow(va_list args)
 {
-	unsigned int num, a, x, rcount = 0, i;
+	unsigned int num, a, rcount, i = 0;
 	char *str;
 
 	num = va_arg(args, int);
 	a = num;
+
 	if (num == 0)
 	{
 		_putchar('0');
@@ -146,6 +137,7 @@ int print_hexalow(va_list args)
 		a /= 16;
 		i++;
 	}
+	rcount = i;
 	str = malloc((sizeof(char) * i) + 1);
 	if (str == NULL)
 	{
@@ -154,24 +146,17 @@ int print_hexalow(va_list args)
 	i = 0;
 	while (num > 0)
 	{
-		x = num % 16;
-		if (x <= 9)
-		{
-			str[i] = x + '0';
-			i++;
-		}
+		if ((num % 16) <= 9)
+			str[i] = (num % 16) + '0';
 		else
-		{
-			str[i] = x - 10 + 'a';
-			i++;
-		}
+			str[i] = (num % 16) - 10 + 'a';
 		num /= 16, i++;
 	}
+	str[i] = '\0';
 	while (i != 0)
 	{
 		i--;
 		_putchar(str[i]);
-		rcount++;
 	}
 	free(str);
 	return (rcount);
@@ -184,11 +169,12 @@ int print_hexalow(va_list args)
  */
 int print_hexaupp(va_list args)
 {
-	unsigned int num, a, x, rcount = 0, i;
+	unsigned int num, a, rcount, i = 0;
 	char *str;
 
 	num = va_arg(args, int);
 	a = num;
+
 	if (num == 0)
 	{
 		_putchar('0');
@@ -196,10 +182,12 @@ int print_hexaupp(va_list args)
 	}
 	while (a > 0)
 	{
-		i++;
 		a /= 16;
+		i++;
 	}
+	rcount = i;
 	str = malloc((sizeof(char) * i) + 1);
+
 	if (str == NULL)
 	{
 		return (-1);
@@ -207,24 +195,17 @@ int print_hexaupp(va_list args)
 	i = 0;
 	while (num > 0)
 	{
-		x = num % 16;
-		if (x <= 9)
-		{
-			str[i] = x + '0';
-			i++;
-		}
+		if ((num % 16) <= 9)
+			str[i] = (num % 16) + '0';
 		else
-		{
-			str[i] = x - 10 + 'A';
-			i++;
-		}
+			str[i] = (num % 16) - 10 + 'A';
 		num /= 16, i++;
 	}
+	str[i] = '\0';
 	while (i != 0)
 	{
 		i--;
 		_putchar(str[i]);
-		rcount++;
 	}
 	free(str);
 	return (rcount);
