@@ -9,9 +9,9 @@
 int print_binary(va_list args)
 {
 	unsigned int num, a, rcount = 0, i = 0;
-	unsigned int *str;
+	char *str;
 
-	num = va_arg(args, int);
+	num = va_arg(args, unsigned int);
 	a = num;
 	if (!num)
 	{
