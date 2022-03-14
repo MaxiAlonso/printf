@@ -66,6 +66,10 @@ int print_string(va_list args)
 
 	str = va_arg(args, char *);
 
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
 	while (str[i] != '\0')
 	{
 		_putchar(str[i]);
