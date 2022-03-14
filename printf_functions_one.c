@@ -9,7 +9,7 @@
 int print_binary(va_list args)
 {
 	unsigned int num, a, rcount = 0, i = 0;
-	char *str;
+	unsigned char *str;
 
 	num = va_arg(args, int);
 	a = num;
