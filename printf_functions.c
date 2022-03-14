@@ -19,6 +19,7 @@ int print_number(va_list args)
 	{
 		_putchar('-');
 		num = (n * (-1));
+		rcount++;
 	}
 	else
 	{
@@ -80,10 +81,13 @@ int print_string(va_list args)
 
 /**
  * print_percentage - Print percentage.
+ * @args: void arg
  * Return: Return lenght of char.
  */
-int print_percentage(void)
+int print_percentage(va_list args)
 {
+	(void)args;
+
 	_putchar('%');
 	return (1);
 }
