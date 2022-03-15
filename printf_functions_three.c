@@ -86,6 +86,7 @@ int print_S(va_list args)
 {
 	char *str;
 	int i = 0;
+	int rcount = 0;
 
 	str = va_arg(args, char *);
 	if (str == NULL)
@@ -99,11 +100,12 @@ int print_S(va_list args)
 		{
 			_putchar('\\');
 			_putchar('x');
+			rcount += 2;
 			if (str[i] < 16)
 			{
 				_putchar('0');
 			}
-			_printf("%X", str[i]);
+			rcount += _printf("%X", str[i]);
 		}
 		else
 		{
@@ -111,5 +113,6 @@ int print_S(va_list args)
 		}
 		i++;
 	}
-	return (i + 2);
+	rcount += i;
+	return (rcount);
 }
