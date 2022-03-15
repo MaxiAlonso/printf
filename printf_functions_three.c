@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * print_hp - Print number in base 16 lowercase.
+ * print_hexapointer - Print number in base 16 lowercase.
  * @a: Argument passed.
  * Return: Return lenght of number.
  **/
