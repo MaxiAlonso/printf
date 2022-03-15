@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 		{"d", print_number}, {"i", print_number}, {"c", print_char}, {"p", print_p},
 		{"s", print_string}, {"%", print_percentage}, {"b", print_binary},
 		{"u", print_unsigned}, {"o", print_octal}, {"x", print_hexalow},
-		{"X", print_hexaupp}, {"r", print_rev}, {"R", print_rot13},
+		{"X", print_hexaupp}, {"r", print_rev}, {"R", print_rot13}, {"S", print_S},
 		{NULL, NULL},
 	};
 	int count = 0, rcount = 0, i = 0, s = 0;
