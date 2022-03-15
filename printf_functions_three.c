@@ -6,7 +6,7 @@
  * Return: Return lenght of number.
  **/
 
-int print_hexapointer(long int a)
+int print_hexapointer(unsigned long int a)
 {
 	unsigned long int num;
 	unsigned int rcount, i = 0;
