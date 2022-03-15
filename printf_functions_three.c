@@ -110,5 +110,5 @@ int print_S(va_list args)
 		}
 		i++;
 	}
-	return (i);
+	return (i + 2);
 }
