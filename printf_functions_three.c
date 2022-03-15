@@ -76,3 +76,35 @@ int print_p(va_list args)
 
 	return (rcount);
 }
+
+/**print_specifier - Custom conversion specifier.
+ * @args: Argument passed.
+ * Return: Return lenght of the string.
+ */
+int print_S(va_list args)
+{
+	char *str;
+	int i = 0;
+
+	str = va_arg(args, char *);
+	if (str == NULL)
+	{
+		_printf("(null)");
+		return (6);
+	}
+	while (str[i])
+	{
+		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
+		{
+			_putchar('\\');
+			_putchar('x');
+			_printf("%X", str[i]);
+		}
+		else
+		{
+			_putchar(str[i]);
+		}
+		i++;
+	}
+	return (i);
+}
