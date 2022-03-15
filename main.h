@@ -30,6 +30,6 @@ int print_hexaupp(va_list args);
 int print_rev(va_list args);
 int print_rot13(va_list args);
 int print_p(va_list args);
-int print_hexapointer(long int a);
+int print_hexapointer(unsigned long int a);
 
 #endif
