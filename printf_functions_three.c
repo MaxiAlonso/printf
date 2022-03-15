@@ -102,19 +102,20 @@ int print_S(va_list args)
 			_putchar('\\');
 			_putchar('x');
 			num = str[i];
+			rcount += 2;
 			if (str[i] <= 16)
 			{
 				_putchar('0');
 			}
 			_printf("%X", num);
-			rcount += 4;
+			rcount += 2;
 		}
 		else
 		{
 			_putchar(str[i]);
+			rcount++;
 		}
 		i++;
 	}
-	rcount += i;
 	return (rcount);
 }
