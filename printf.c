@@ -8,10 +8,10 @@
 int _printf(const char *format, ...)
 {
 	print myprint[] = {
-		{"d", print_number}, {"i", print_number}, {"c", print_char},
+		{"d", print_number}, {"i", print_number}, {"c", print_char}, {"p", print_p},
 		{"s", print_string}, {"%", print_percentage}, {"b", print_binary},
 		{"u", print_unsigned}, {"o", print_octal}, {"x", print_hexalow},
-		{"X", print_hexaupp}, {"r", print_rev}, {"R", print_rot13},
+		{"3", print_hp}, {"X", print_hexaupp}, {"r", print_rev}, {"R", print_rot13},
 		{NULL, NULL},
 	};
 	int count = 0, rcount = 0, i = 0, s = 0;
