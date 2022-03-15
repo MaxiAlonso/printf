@@ -113,6 +113,6 @@ int print_S(va_list args)
 		}
 		i++;
 	}
-	rcount += i - 1;
+	rcount = rcount + (i - 1);
 	return (rcount);
 }
