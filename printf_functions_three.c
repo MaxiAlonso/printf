@@ -106,6 +106,7 @@ int print_S(va_list args)
 			if (str[i] <= 16)
 			{
 				_putchar('0');
+				rcount += 1;
 			}
 			rcount += _printf("%X", num);
 		}
