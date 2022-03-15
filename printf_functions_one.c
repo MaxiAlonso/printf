@@ -129,10 +129,10 @@ int print_octal(va_list args)
  */
 int print_hexalow(va_list args)
 {
-	unsigned int num, a, rcount, i = 0;
+	unsigned long int num, a, rcount, i = 0;
 	char *str;
 
-	num = va_arg(args, int);
+	num = va_arg(args, long int);
 	a = num;
 
 	if (num == 0)
