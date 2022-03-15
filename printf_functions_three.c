@@ -97,7 +97,7 @@ int print_S(va_list args)
 	}
 	while (str[i])
 	{
-		if (str[i] > 0 && str[i] < 32)
+		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
@@ -107,7 +107,7 @@ int print_S(va_list args)
 				_putchar('0');
 			}
 			num = str[i];
-			rcount += _printf("%X", (num));
+			rcount += _printf("%X", num);
 		}
 		else
 		{
