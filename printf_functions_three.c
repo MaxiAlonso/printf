@@ -98,6 +98,10 @@ int print_S(va_list args)
 		{
 			_putchar('\\');
 			_putchar('x');
+			if (str[i] < 16)
+			{
+				_putchar('0');
+			}
 			_printf("%X", str[i]);
 		}
 		else
