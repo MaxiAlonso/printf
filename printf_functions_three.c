@@ -77,7 +77,8 @@ int print_p(va_list args)
 	return (rcount);
 }
 
-/**print_specifier - Custom conversion specifier.
+/**
+ * print_S - Custom conversion specifier.
  * @args: Argument passed.
  * Return: Return lenght of the string.
  */
@@ -94,7 +95,7 @@ int print_S(va_list args)
 	}
 	while (str[i])
 	{
-		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
+		if (str[i] > 0 && str[i] < 32)
 		{
 			_putchar('\\');
 			_putchar('x');
