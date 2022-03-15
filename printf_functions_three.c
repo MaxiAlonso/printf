@@ -102,11 +102,11 @@ int print_S(va_list args)
 			_putchar('\\');
 			_putchar('x');
 			rcount += 2;
-			if (str[i] < 16)
+			num = str[i];
+			if (str[i] <= 16)
 			{
 				_putchar('0');
 			}
-			num = str[i];
 			rcount += _printf("%X", num);
 		}
 		else
