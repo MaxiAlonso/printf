@@ -101,14 +101,13 @@ int print_S(va_list args)
 		{
 			_putchar('\\');
 			_putchar('x');
-			rcount += 2;
 			num = str[i];
 			if (str[i] <= 16)
 			{
 				_putchar('0');
-				rcount += 1;
 			}
-			rcount += _printf("%X", num);
+			_printf("%X", num);
+			rcount += 4;
 		}
 		else
 		{
