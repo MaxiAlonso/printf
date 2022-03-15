@@ -63,8 +63,8 @@ int print_p(va_list args)
 
 	if (adress == NULL)
 	{
-		_printf("(null)");
-		return (6);
+		_printf("(nil)");
+		return (5);
 	}
 	_putchar('0');
 	_putchar('x');
