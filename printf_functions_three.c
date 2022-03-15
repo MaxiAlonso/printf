@@ -1,18 +1,18 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_hp - Print number in base 16 lowercase.
- * @args: Argument passed.
+ * @a: Argument passed.
  * Return: Return lenght of number.
  **/
 
-int print_hp(va_list args)
+int print_hexapointer(long int a)
 {
 	unsigned long int num;
-	int a, rcount, i = 0;
+	unsigned int rcount, i = 0;
 	char *str;
 
-	num = va_arg(args, long int);
-	a = num;
+	num = a;
 
 	if (num == 0)
 	{
@@ -57,7 +57,7 @@ int print_p(va_list args)
 {
 	void *adress;
 	long int a = 0;
-	int rcount = 0;
+	unsigned int rcount = 0;
 
 	adress = va_arg(args, void *);
 
@@ -68,10 +68,11 @@ int print_p(va_list args)
 	}
 	_putchar('0');
 	_putchar('x');
+	rcount = 2;
 
 	a = (unsigned long int)adress;
 
-	rcount = _printf("%3", a);
+	rcount += print_hexapointer(a);
 
-	return (rcount + 2);
+	return (rcount);
 }
