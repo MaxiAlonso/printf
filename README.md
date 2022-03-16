@@ -71,7 +71,7 @@ _printf is a function, which takes a format which can be a string of ordinary ch
                 _printf("%c\n", a);
                 Output: 112
 	
-	Character:
+        Character:
                 _printf("%c\n", c);
                 Output: i
         
@@ -99,11 +99,11 @@ _printf is a function, which takes a format which can be a string of ordinary ch
                 _printf("%X\n", 1212);
                 Output: 4BC
 
-	String with non printable characters in ASCCI converted:
+        String with non printable characters in ASCCI converted:
                 _printf("%S" "Hello\nWorld");
                 Output: Hello\x0AWorld
 	
-	Pointer adress:
+        Pointer adress:
                 _printf("%p\n", p);
                 Output: 0x7ffc07513184
         
