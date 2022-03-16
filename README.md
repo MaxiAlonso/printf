@@ -15,9 +15,9 @@ _printf is a function, which takes a format which can be a string of ordinary ch
 
 ## Syntax 
 
-	_printf("literal stirng **%directive** literal string", argument);
+*_printf("literal stirng **%directive** literal string", argument);
                          
-	If more than one directive is specified, the arguments must be specified in the same order. By default the function will give "Error" in case of placing the directives and arguments in different order.
+If more than one directive is specified, the arguments must be specified in the same order. By default the function will give "Error" in case of placing the directives and arguments in different order.
 
 ## List of directives
 
@@ -31,7 +31,7 @@ _printf is a function, which takes a format which can be a string of ordinary ch
 | %u | Print an unsigned integer |
 | %o | Print a number in octal |
 | %x | Print a number in hexadecimal lowercase |
-| %i | Print a number in hexadecimal uppercase |
+| %X | Print a number in hexadecimal uppercase |
 | %S | Print print a string Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters) |
 | %p | Print print pointer adress |
 | %r | Print a string in reverse |
