@@ -2,20 +2,20 @@
 
 ## Synopsis
 
-	For this project we have to create our own printf function in C language. It was very challenging, because it was the first time that we had to work in pairs and apply almost all the concepts that we had been learing since the first day.
+For this project we have to create our own printf function in C language. It was very challenging, because it was the first time that we had to work in pairs and apply almost all the concepts that we had been learing since the first day.
 
 ## Description
 
-	The _printf function write output to standar output.
+The _printf function write output to standar output.
 
-	Our function aims print and convert the arguments passed by the users, they would be for example a string literal or a an integer number, binaries, etc. 
-	In order to apply the differents directives of the function differents flags must be applied. 
+Our function aims print and convert the arguments passed by the users, they would be for example a string literal or a an integer number, binaries, etc. 
+In order to apply the differents directives of the function differents flags must be applied. 
 
-	_printf is a function, which takes a format which can be a string of ordinary characters, to be printed or it can also be composed of directives, which set the output of the function, to identify a directive, you have to use the symbol "%" folowwed by the directive.
+_printf is a function, which takes a format which can be a string of ordinary characters, to be printed or it can also be composed of directives, which set the output of the function, to identify a directive, you have to use the symbol "%" folowwed by the directive.
 
 ## Syntax 
 
-        * _printf("literal stirng **%directive** literal string", argument);
+	_printf("literal stirng **%directive** literal string", argument);
                          
 	If more than one directive is specified, the arguments must be specified in the same order. By default the function will give "Error" in case of placing the directives and arguments in different order.
 
@@ -40,16 +40,15 @@
 
 ## Flow chart
 
-![App Screenshot](https://i.postimg.cc/QMVSq1MK/Untitled-Diagram-1.jpg)
+![App Screenshot](https://i.postimg.cc/76938Lbr/Untitled-Diagram-3.jpg)
 
 ## Usage
-	* C langauge.
-	* All the files had to be compiled on Ubuntu 20.04 LTS.
-	* The code was compiled this way: gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
+* C langauge.
+* All the files had to be compiled on Ubuntu 20.04 LTS.
+* The code was compiled this way: gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
 ## Example
 
-```bash
         #include "main.h"
 
         int main(void)
@@ -116,7 +115,6 @@
                 _printf("%R\n", "HelloWorld");
                 Output: UryybJbeyq
        }
-
 
 This project was made for Holberton School project by:
 
