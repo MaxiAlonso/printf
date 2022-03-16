@@ -6,8 +6,8 @@
 
 /**
  * struct pri - struct
- * @pr: a
- * @f: b
+ * @pr: directive
+ * @f: pointer to a function
  **/
 
 typedef struct pri
