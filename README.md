@@ -55,8 +55,8 @@ If more than one directive is specified, the arguments must be specified in the 
         {
                 int a = 112;
                 char c = 'i';
-		char *str = "Hello World";
-		int *p;
+                char *str = "Hello World";
+                int *p;
 		p = &a;
 
         Literal string:
