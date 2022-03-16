@@ -15,7 +15,7 @@ _printf is a function, which takes a format which can be a string of ordinary ch
 
 ## Syntax 
 
-*_printf("literal stirng **%directive** literal string", argument);
+_printf("literal stirng **%directive** literal string", argument);
                          
 If more than one directive is specified, the arguments must be specified in the same order. By default the function will give "Error" in case of placing the directives and arguments in different order.
 
