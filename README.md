@@ -38,7 +38,7 @@
 | %R | Print a rot13 string |
 | %% | Print the "%" character |
 
-##Flow chart
+## Flow chart
 
 ![App Screenshot](https://i.postimg.cc/QMVSq1MK/Untitled-Diagram-1.jpg)
 
@@ -115,9 +115,8 @@
         String in rot13:
                 _printf("%R\n", "HelloWorld");
                 Output: UryybJbeyq
-        }
-```
-```
+       }
+
 
 This project was made for Holberton School project by:
 
